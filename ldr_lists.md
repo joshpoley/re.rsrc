@@ -27,7 +27,7 @@ These modules should all be constant at these spots in the linked list, anything
 
 >  ( * (int*)(PEB + 0xC) + **0xC** )
 
-```
+```cpp
 LDR_DATA_TABLE_ENTRY
    +0x000 InLoadOrderLinks               : LIST_ENTRY [size:8]
    +0x008 InMemoryOrderLinks             : LIST_ENTRY [size:8]
@@ -51,7 +51,7 @@ LDR_DATA_TABLE_ENTRY
 
 >  ( * (int*)(PEB + 0xC) + **0x14** )
 
-```
+```cpp
 LDR_DATA_TABLE_ENTRY
    -0x008 InLoadOrderLinks               : LIST_ENTRY [size:8]
    +0x000 InMemoryOrderLinks             : LIST_ENTRY [size:8]
@@ -75,7 +75,7 @@ LDR_DATA_TABLE_ENTRY
 
 >  ( * (int*)(PEB + 0xC) + **0x1C** )
 
-```
+```cpp
 LDR_DATA_TABLE_ENTRY
    -0x010 InLoadOrderLinks               : LIST_ENTRY [size:8]
    -0x008 InMemoryOrderLinks             : LIST_ENTRY [size:8]
@@ -101,9 +101,9 @@ LDR_DATA_TABLE_ENTRY
 
 ## x64 In-Load-Order Offsets
 
->  ( * (int*)(PEB + 0xC) + **0x10** )
+>  ( * (int*)(PEB + 0x18) + **0x10** )
 
-```
+```cpp
 LDR_DATA_TABLE_ENTRY
    +0x000 InLoadOrderLinks               : LIST_ENTRY [pack:8 size:16]
    +0x010 InMemoryOrderLinks             : LIST_ENTRY [pack:8 size:16]
@@ -124,9 +124,9 @@ LDR_DATA_TABLE_ENTRY
 
 ## x64 In-Memory-Order Offsets
 
->  ( * (int*)(PEB + 0xC) + **0x20** )
+>  ( * (int*)(PEB + 0x18) + **0x20** )
 
-```
+```cpp
 LDR_DATA_TABLE_ENTRY
    -0x010 InLoadOrderLinks               : LIST_ENTRY [pack:8 size:16]
    +0x000 InMemoryOrderLinks             : LIST_ENTRY [pack:8 size:16]
@@ -147,9 +147,9 @@ LDR_DATA_TABLE_ENTRY
 
 ## x64 In-Initialization-Order Offsets
 
->  ( * (int*)(PEB + 0xC) + **0x30** )
+>  ( * (int*)(PEB + 0x18) + **0x30** )
 
-```
+```cpp
 LDR_DATA_TABLE_ENTRY
    -0x020 InLoadOrderLinks               : LIST_ENTRY [pack:8 size:16]
    -0x010 InMemoryOrderLinks             : LIST_ENTRY [pack:8 size:16]
